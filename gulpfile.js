@@ -23,6 +23,7 @@ var browserSync = require('browser-sync').create();
 var notify = require('gulp-notify');
 var plumber = require('gulp-plumber');
 var csscomb = require('gulp-csscomb');
+var rigger = require('gulp-rigger');
 
 var imgSrc = 'src/img/*.*';
 var imgDst = 'build/img';
@@ -65,6 +66,14 @@ gulp.task('less', function() {
     .pipe(gulp.dest('build'))
     .pipe(debug({title: 'build---------'}));
     // .pipe(reload({stream: true}));
+});
+
+gulp.task('html', function() {
+  console.log('-------------------------- Обработка HTML ---------------');
+  return gulp.src('src/*.html')
+    .pipe(rigger())
+    .pipe(debug({title: 'rigger --------'}))
+    .pipe(gulp.dest('build'));
 });
 
 
@@ -111,10 +120,11 @@ gulp.task('del', function() {
 // });
 
 
-gulp.task('build', ['del', 'less', 'img']);
+gulp.task('build', ['del','html', 'less', 'img']);
 
 
 gulp.task('watch', function() {
+  gulp.watch('src/**/*.html', ['html'])
   gulp.watch('src/**/*.less', ['less'])
   gulp.watch('src/img/*.*', ['img']);
 });

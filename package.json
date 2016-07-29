@@ -27,6 +27,7 @@
     "gulp-pngquant": "^1.0.10",
     "gulp-remember": "^0.3.1",
     "gulp-rename": "^1.2.2",
+    "gulp-rigger": "^0.5.8",
     "gulp-size": "^2.1.0",
     "gulp-sourcemaps": "^1.6.0",
     "gulp-watch": "^4.3.8",
