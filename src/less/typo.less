@@ -1,0 +1,58 @@
+html {
+  font-family: @FiraSans;
+  font-weight: @regular;
+  font-size: 100%;
+  color: @darkest_grey;
+}
+
+body {
+  letter-spacing: 0.037em;
+}
+
+
+h1 {
+  font-family: 'PT Serif Caption', serif;
+  font-weight: @regular;
+  .font-size(18);
+  line-height: 1.625rem;
+  @media @tablet {
+    .font-size(36);
+    line-height: 2.62rem;
+    letter-spacing: 0.05em;
+  }
+
+
+}
+
+h2 {
+  font-family: 'PT Serif Caption', serif;
+  font-weight: @regular;
+  @media @tablet {
+    .font-size(28);
+    letter-spacing: 0.05em;
+  }
+}
+
+h3 {
+  font-family: @FiraSans;
+  .font-size(14);
+  font-weight: 500;
+  line-height: 1.8em;
+  text-transform: uppercase;
+}
+
+p {
+  font-family: @FiraSans;
+  .font-size(16);
+  font-weight: @regular;
+  line-height: 1.4em;
+}
+
+a {
+  .font-size(14);
+  font-family: @FiraSans;
+  color: @darkest_grey;
+  outline: none;
+  text-decoration: none;
+}
+

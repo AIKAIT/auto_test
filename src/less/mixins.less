@@ -1,0 +1,178 @@
+//                            //-webkit-padding-start RESET
+
+.webkit-40 {
+  margin-left: -40px;
+}
+
+
+//                            //Font-size rem calc//
+
+.font-size(@sizeValue) {
+
+  @remValue: @sizeValue / @baseSize;
+  @pxValue: @sizeValue;
+
+  font-size: ~"@{remValue}rem";
+  font-size: ~"@{pxValue}px";   //раскомментировать для отображения в PX
+}
+
+
+//                            //Padding rem calc//
+
+.padding(@top @right @bottom @left) {
+
+  @topRemValue: @top / @baseSize;
+  @topPxValue: @top;
+
+  @rightRemValue: @right / @baseSize;
+  @rightPxValue: @right;
+
+  @bottomRemValue: @bottom / @baseSize;
+  @bottomPxValue: @bottom;
+
+  @leftRemValue: @left / @baseSize;
+  @leftPxValue: @left;
+
+  padding: ~"@{topRemValue}rem" ~"@{rightRemValue}rem" ~"@{bottomRemValue}rem" ~"@{leftRemValue}rem";
+  padding: ~"@{topPxValue}px" ~"@{rightPxValue}px" ~"@{bottomPxValue}px" ~"@{leftPxValue}px";       //раскомментировать для отображения в PX
+}
+
+.padding(@top @horizontal @bottom) {
+
+  @topRemValue: @top / @baseSize;
+  @topPxValue: @top;
+
+  @horizontalRemValue: @horizontal / @baseSize;
+  @horizontalPxValue: @horizontal;
+
+  @bottomRemValue: @bottom / @baseSize;
+  @bottomPxValue: @bottom;
+
+  padding: ~"@{topRemValue}rem" ~"@{horizontalRemValue}rem" ~"@{bottomRemValue}rem";
+  padding: ~"@{topPxValue}px" ~"@{horizontalPxValue}px" ~"@{bottomPxValue}px";                      //раскомментировать для отображения в PX
+}
+
+.padding(@vertical @horizontal) {
+
+  @verticalRemValue: @vertical / @baseSize;
+  @verticalPxValue: @vertical;
+
+  @horizontalRemValue: @horizontal / @baseSize;
+  @horizontalPxValue: @horizontal;
+
+  padding: ~"@{verticalRemValue}rem" ~"@{horizontalRemValue}rem";
+  padding: ~"@{verticalPxValue}px" ~"@{horizontalPxValue}px";                                       //раскомментировать для отображения в PX
+}
+
+.padding(@allPaddingValue) {
+  @allPaddingRemValue: @allPaddingValue / @baseSize;
+  @allPaddingPxValue: @allPaddingValue;
+
+  padding: ~"@{allPaddingRemValue}rem";
+  padding: ~"@{allPaddingPxValue}px";                                                               //раскомментировать для отображения в PX
+}
+
+
+//                            //Для форматирования текста//
+.textSmall() {
+  font-family: @FiraSans;
+  .font-size(14);
+  font-weight: 400;
+  line-height: 1.8em;
+  letter-spacing: 0.045em;
+}
+
+.textAccent() {
+color: #1c1c1c;
+font-family: @FiraSans;
+.font-size(18);
+font-weight: 400;
+line-height: 2.4em;
+}
+
+.textMenu() {
+  font-family: @FiraSans;
+  .font-size(14);
+  font-weight: 400;
+  line-height: 3.0625rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  &:hover {
+    color: @orange;
+    font-weight: 500;
+  }
+  &--active {
+    color: @orange;
+    font-weight: 500;
+  }
+}
+
+.link() {                     //для ПОДЧЕРКНУТЫХ ссылок//
+  border-bottom: 1px dotted @darkest_grey;
+  &:hover {
+    border-bottom: none;
+  }
+}
+
+
+//                            //SVG sprite mixin
+
+.icon__svg (@bgSize; @bgPosition) {
+  background-size: @bgSize;
+  background-position: @bgPosition;
+
+  display: inline-block;
+  background-repeat: no-repeat;
+  background-image: url('./img/sprite__svg.svg');
+}
+
+
+//                            //Оформление кнопок//
+
+.button() {
+  font-family: @FiraSans;
+  color: white;
+  .font-size(14);
+  height: 14px;
+  width: 119px;
+  font-weight: 500;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: none;
+  background-color: @orange;
+  .padding(11, 32, 12, 34);
+  border-radius: 1.125rem;
+  letter-spacing: 0.0375rem;
+  &:hover {
+    background-color: @dark_orange;
+  }
+  &--icon-calendar {
+    .icon__svg(15px; 12% -21px);
+    .padding(11, 20, 12, 43);
+    // background-image: url('./img/calendar.svg');
+    // background-size: 14px;
+    // background-repeat: no-repeat;
+    // background-position: 15px 12px;
+  }
+  &--bordered {
+    width: 91px;
+    border: 2px solid @white;
+    color: @white;
+    background: none;
+    .padding(10, 25, 9);
+  }
+  &--bordered:hover {
+    background-color: @white;
+    color: @green;
+  }
+  &--green {
+    border-radius: 0;
+    background-color: @green;
+    // padding: 20px 32px 16px 30px;
+    .padding(20, 32, 16, 30);
+  }
+  &--green:hover {
+    background-color: @dark_green;
+  }
+}
+

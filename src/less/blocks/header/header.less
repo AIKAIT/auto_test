@@ -1,0 +1,27 @@
+body {
+  // background-color: blue;
+}
+
+.page-header {
+  // background-color: @green;
+  display: flex;
+  flex-direction: column;
+  @media @desktop {
+    flex-direction: row;
+    padding-top: 0;
+  }
+}
+
+.page-header__inner {
+  display: flex;
+  flex-direction: column;
+  padding-top: 1rem;
+  @media @desktop {
+    flex-direction: row;
+    .padding(0, 110);
+  }
+}
+.btn {
+  .button;
+  // height: 37px;
+}

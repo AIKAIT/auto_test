@@ -1,0 +1,187 @@
+/*
+LESS variables are information about icon's compiled state, stored under its original file name
+
+.icon-home {
+  width: @icon-home-width;
+}
+
+The large array-like variables contain all information about a single icon
+@icon-home: x y offset_x offset_y width height total_width total_height image_path name;
+
+At the bottom of this section, we provide information about the spritesheet itself
+@spritesheet: width height image @spritesheet-sprites;
+*/
+@-bathtub-name: 'Bathtub';
+@-bathtub-x: 0px;
+@-bathtub-y: 26px;
+@-bathtub-offset-x: 0px;
+@-bathtub-offset-y: -26px;
+@-bathtub-width: 52px;
+@-bathtub-height: 28px;
+@-bathtub-total-width: 82px;
+@-bathtub-total-height: 382px;
+@-bathtub-image: 'sprite__png.png';
+@-bathtub: 0px 26px 0px -26px 52px 28px 82px 382px 'sprite__png.png' 'Bathtub';
+@-bed-name: 'Bed';
+@-bed-x: 0px;
+@-bed-y: 125px;
+@-bed-offset-x: 0px;
+@-bed-offset-y: -125px;
+@-bed-width: 55px;
+@-bed-height: 43px;
+@-bed-total-width: 82px;
+@-bed-total-height: 382px;
+@-bed-image: 'sprite__png.png';
+@-bed: 0px 125px 0px -125px 55px 43px 82px 382px 'sprite__png.png' 'Bed';
+@-cottage-name: 'Cottage';
+@-cottage-x: 0px;
+@-cottage-y: 256px;
+@-cottage-offset-x: 0px;
+@-cottage-offset-y: -256px;
+@-cottage-width: 80px;
+@-cottage-height: 62px;
+@-cottage-total-width: 82px;
+@-cottage-total-height: 382px;
+@-cottage-image: 'sprite__png.png';
+@-cottage: 0px 256px 0px -256px 80px 62px 82px 382px 'sprite__png.png' 'Cottage';
+@-elevator-name: 'Elevator';
+@-elevator-x: 0px;
+@-elevator-y: 168px;
+@-elevator-offset-x: 0px;
+@-elevator-offset-y: -168px;
+@-elevator-width: 27px;
+@-elevator-height: 43px;
+@-elevator-total-width: 82px;
+@-elevator-total-height: 382px;
+@-elevator-image: 'sprite__png.png';
+@-elevator: 0px 168px 0px -168px 27px 43px 82px 382px 'sprite__png.png' 'Elevator';
+@-hotel-name: 'Hotel';
+@-hotel-x: 0px;
+@-hotel-y: 318px;
+@-hotel-offset-x: 0px;
+@-hotel-offset-y: -318px;
+@-hotel-width: 82px;
+@-hotel-height: 64px;
+@-hotel-total-width: 82px;
+@-hotel-total-height: 382px;
+@-hotel-image: 'sprite__png.png';
+@-hotel: 0px 318px 0px -318px 82px 64px 82px 382px 'sprite__png.png' 'Hotel';
+@-wi-fi-name: 'WiFi';
+@-wi-fi-x: 0px;
+@-wi-fi-y: 83px;
+@-wi-fi-offset-x: 0px;
+@-wi-fi-offset-y: -83px;
+@-wi-fi-width: 50px;
+@-wi-fi-height: 42px;
+@-wi-fi-total-width: 82px;
+@-wi-fi-total-height: 382px;
+@-wi-fi-image: 'sprite__png.png';
+@-wi-fi: 0px 83px 0px -83px 50px 42px 82px 382px 'sprite__png.png' 'WiFi';
+@bus-name: 'bus';
+@bus-x: 0px;
+@bus-y: 54px;
+@bus-offset-x: 0px;
+@bus-offset-y: -54px;
+@bus-width: 50px;
+@bus-height: 29px;
+@bus-total-width: 82px;
+@bus-total-height: 382px;
+@bus-image: 'sprite__png.png';
+@bus: 0px 54px 0px -54px 50px 29px 82px 382px 'sprite__png.png' 'bus';
+@ruler-name: 'ruler';
+@ruler-x: 0px;
+@ruler-y: 211px;
+@ruler-offset-x: 0px;
+@ruler-offset-y: -211px;
+@ruler-width: 45px;
+@ruler-height: 45px;
+@ruler-total-width: 82px;
+@ruler-total-height: 382px;
+@ruler-image: 'sprite__png.png';
+@ruler: 0px 211px 0px -211px 45px 45px 82px 382px 'sprite__png.png' 'ruler';
+@train-name: 'train';
+@train-x: 0px;
+@train-y: 0px;
+@train-offset-x: 0px;
+@train-offset-y: 0px;
+@train-width: 58px;
+@train-height: 26px;
+@train-total-width: 82px;
+@train-total-height: 382px;
+@train-image: 'sprite__png.png';
+@train: 0px 0px 0px 0px 58px 26px 82px 382px 'sprite__png.png' 'train';
+@spritesheet-width: 82px;
+@spritesheet-height: 382px;
+@spritesheet-image: 'sprite__png.png';
+@spritesheet-sprites: @-bathtub @-bed @-cottage @-elevator @-hotel @-wi-fi @bus @ruler @train;
+@spritesheet: 82px 382px 'sprite__png.png' @spritesheet-sprites;
+
+/*
+The provided classes are intended to be used with the array-like variables
+
+.icon-home {
+  .sprite-width(@icon-home);
+}
+.icon-email {
+  .sprite(@icon-email);
+}
+
+Example usage in HTML:
+
+`display: block` sprite:
+<div class="icon-home"></div>
+
+To change `display` (e.g. `display: inline-block;`), we suggest using a common CSS class:
+
+// CSS
+.icon {
+  display: inline-block;
+}
+
+// HTML
+<i class="icon icon-home"></i>
+*/
+.sprite-width(@sprite) {
+  width: extract(@sprite, 5);
+}
+
+.sprite-height(@sprite) {
+  height: extract(@sprite, 6);
+}
+
+.sprite-position(@sprite) {
+  @sprite-offset-x: extract(@sprite, 3);
+  @sprite-offset-y: extract(@sprite, 4);
+  background-position: @sprite-offset-x @sprite-offset-y;
+}
+
+.sprite-image(@sprite) {
+  @sprite-image: extract(@sprite, 9);
+  @sprite-image-bare: ~`"@{sprite-image}".slice(1, -1)`;
+  background-image: url(@sprite-image-bare);
+}
+
+.sprite(@sprite) {
+  .sprite-image(@sprite);
+  .sprite-position(@sprite);
+  .sprite-width(@sprite);
+  .sprite-height(@sprite);
+}
+
+/*
+The `.sprites` mixin generates identical output to the CSS template
+  but can be overridden inside of LESS
+
+This must be run when you have at least 2 sprites.
+  If run with a single sprite, then there will be reference errors.
+
+.sprites(@spritesheet-sprites);
+*/
+.sprites(@sprites, @i: 1) when (@i <= length(@sprites)) {
+  @sprite: extract(@sprites, @i);
+  @sprite-name: e(extract(@sprite, 10));
+  .@{sprite-name} {
+    .sprite(@sprite);
+  }
+  .sprites(@sprites, @i + 1);
+}

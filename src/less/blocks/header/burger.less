@@ -1,0 +1,29 @@
+
+.burger-line() {
+  width: 28px;
+  height: 4px;
+  border-radius: 0.125rem;
+  background-color: @orange;
+  position: absolute;
+}
+
+.burger {
+  .burger-line;
+  top: 8px;
+  &::before {
+    .burger-line;
+    content: "";
+    top: -8px;
+    // background-color: black;
+  }
+  &::after {
+    .burger-line;
+    content: "";
+    bottom: -8px;
+    // background-color: blue;
+  }
+}
+
+.main-nav__burger {
+  .burger;
+}

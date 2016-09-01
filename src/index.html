@@ -2,29 +2,13 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width"; initial-scale="1" />
   <title>Document</title>
+  <link href='https://fonts.googleapis.com/css?family=PT+Serif|PT+Serif+Caption|Fira+Sans:400,500&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" type="text/css" href="min.style.css">
 </head>
 <body>
-  <header class="page-header">
-    <div class="page-header__inner">
-      <a href="" class="logo"></a><img src="" alt="">
-      <nav class="main-nav">
-        <ul class="main-nav__list">
-          <li class="main-nav__item"><a href="" class="main-nav__link">Номера</a></li>
-          <li class="main-nav__item"><a href="" class="main-nav__link">Коттедж</a></li>
-          <li class="main-nav__item"><a href="" class="main-nav__link">Ресторан</a></li>
-          <li class="main-nav__item"><a href="" class="main-nav__link">Отдых</a></li>
-          <li class="main-nav__item"><a href="" class="main-nav__link">Контакты</a></li>
-        </ul>
-        <span class="main-nav__burger"></span>
-      </nav>
-      <div class="page-header__contacts">
-        <a href="tel:+78127775588">+7 812 777-55-88</a>
-        Адрес
-      </div>
-      <a href="" class="btn btn--icon-calendar">Забронировать</a>
-    </div>
-  </header>
+  //= html/header.html
   <div class="rest-tabs">
    <ul class="rest-tabs__switcher">
      <li><a href="">Семейный</a></li>
@@ -86,10 +70,21 @@
         </blockquote>
       </div>
     </div>
-    <a href="#" class="btn--bordered">Все отзывы</a>
-
+    <a href="#" class="btn btn--bordered">Все отзывы</a>
   </section>
 //= html/footer.html
-//= html/foo.html
+<script>
+  var link = document.querySelector(".main-nav__burger");
+  var menu = document.querySelector(".main-nav__list");
+
+  link.addEventListener('click', function(event) {
+    menu.classList.toggle('main-nav__list--show');
+  }, false);
+
+  // link.addEventListener("click", function(event) {
+  //   event.preventDefault();
+  //   popup.classList.add('main-nav__list--show');
+  // });
+</script>
 </body>
 </html>
