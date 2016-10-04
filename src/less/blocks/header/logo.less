@@ -1,23 +1,36 @@
 .logo {
-  max-width: 143px;
-  min-width: 143px;
+  width: 143px;
   height: 50px;
-  background-image: url('./img/logo.png');
-  background-size: 44px 49px;
-  background-repeat: no-repeat;
-  background-position: 49% 0;
   position: relative;
-  margin: auto;
-  .logo__text {
+  display: block;
+  margin: 0 auto 15px;
+  @media @desktop {
+    margin: 0;
+  }
+
+  .logo__text() {
     font-family: 'PT Serif', sans-serif;
     .font-size(15);
     line-height: 1.5rem;
     color: @green;
     text-transform: uppercase;
     position: absolute;
-    bottom: 10px;
+    top: 15px;
   }
-  .logo__text--right {
+
+  &::before {
+    content: "Green";
+    .logo__text();
+  }
+
+  &::after {
+    content: "Valley";
+    .logo__text;
     right: 0;
+  }
+
+  .logo__img {
+    display: block;
+    margin: 0 auto;
   }
 }

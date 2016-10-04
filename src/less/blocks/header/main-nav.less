@@ -1,10 +1,10 @@
 .main-nav {
-  // display: flex;
-  // flex-direction: column;
+  display: flex;
+  flex-direction: column;
   border-top: 1px solid @light_grey;
-  margin-top: 25px;
-  @media @tablet {
-      // flex-direction: row;
+
+  @media @desktop {
+      flex-direction: row;
       border: none;
     }
   .main-nav__list {
@@ -15,21 +15,22 @@
     display: flex;
     flex-direction: column;
     align-items : center;
-
-    margin: 0;
-    margin-left: -44px;
+    margin-top: 0;
+    margin-bottom: 0;
     }
     @media @desktop {
       display: flex;
       flex-direction: row;
+      justify-content: space-between;
     }
   }
   .main-nav__item {
     border-bottom: 1px solid @light_grey;
     width: 100%;
     text-align: center;
-    @media @tablet {
+    @media @desktop {
       border: none;
+      padding-right: 19px;
     }
   }
   .main-nav__link {
